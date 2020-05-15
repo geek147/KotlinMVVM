@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BukuWarungTest</string>
+    <string name="title_home">Home</string>
+    <string name="title_profile">Profile</string>
+    <string name="name">name</string>
+    <string name="ilham">Ilham Aulia Malik</string>
+    <string name="email">email</string>
+    <string name="ilham_email">ilhamaulia.malik@gmail.com</string>
+</resources>
