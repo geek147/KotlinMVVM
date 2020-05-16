@@ -12,11 +12,13 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.envios.bukuwarungtest.R
 import com.envios.bukuwarungtest.databinding.FragmentHomeBinding
-import com.envios.bukuwarungtest.utils.NetworkStateUtil
+import com.envios.bukuwarungtest.utils.Failed
+import com.envios.bukuwarungtest.utils.Loading
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class HomeFragment : Fragment() {
 
-    private lateinit var viewModel: HomeViewModel
+    val viewModel: HomeViewModel by viewModel()
     private lateinit var binding: FragmentHomeBinding
 
     private lateinit var adapter: HomeAdapter
@@ -26,15 +28,12 @@ class HomeFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        viewModel =
-                ViewModelProvider(this).get(HomeViewModel::class.java)
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
+                binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
         return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         binding.main = viewModel
 
 
@@ -45,34 +44,31 @@ class HomeFragment : Fragment() {
         adapter.setHasStableIds(true)
         binding.rvUsers.adapter = adapter
 
-        viewModel.searchUsers()
+        viewModel.getUsers()
 
-        searchUser()
+        observeLiveData()
 
     }
 
     private fun observeLiveData(){
-        viewModel.listUser.observe(viewLifecycleOwner, Observer {
+        viewModel.states.observe(viewLifecycleOwner, Observer {
 
-            adapter.setData(it?.data!!)
-            adapter.notifyDataSetChanged()
-        })
-        viewModel.error.observe(viewLifecycleOwner, Observer {
+            when (it) {
+                is HomeViewModel.UsersLoaded -> {
+                    adapter.setData(it.userList)
+                    adapter.notifyDataSetChanged()
+                }
+                is Loading -> {
 
-            Toast.makeText(requireContext(),"There is a problem with getting data from server",
-                Toast.LENGTH_SHORT).show()
-
-        })
-    }
-
-    private fun searchUser() {
-        val networkStateUtil = NetworkStateUtil(requireContext())
-
-        networkStateUtil.observe(viewLifecycleOwner, Observer{
-                isConnected ->
-            isConnected?.let {
-                    observeLiveData()
+                }
+                is Failed -> {
+                    if (it.error != null) Toast.makeText(requireContext(),it.error!!, Toast.LENGTH_LONG).show()
+                }
             }
-        } )
+
+        })
+
     }
+
+
 }

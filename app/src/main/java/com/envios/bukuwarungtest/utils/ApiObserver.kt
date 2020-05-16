@@ -1,5 +1,6 @@
 package com.envios.bukuwarungtest.utils
 
+import io.reactivex.Flowable
 import io.reactivex.Observer
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable

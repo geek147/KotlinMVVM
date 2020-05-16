@@ -1,4 +1,4 @@
-package com.envios.bukuwarungtest.model
+package com.envios.bukuwarungtest.data.remote.model
 
 
 import android.os.Parcelable
