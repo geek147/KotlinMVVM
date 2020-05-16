@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -14,6 +15,7 @@ import com.envios.bukuwarungtest.R
 import com.envios.bukuwarungtest.databinding.FragmentHomeBinding
 import com.envios.bukuwarungtest.utils.Failed
 import com.envios.bukuwarungtest.utils.Loading
+import kotlinx.android.synthetic.main.fragment_home.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class HomeFragment : Fragment() {
@@ -59,7 +61,8 @@ class HomeFragment : Fragment() {
                     adapter.notifyDataSetChanged()
                 }
                 is Loading -> {
-
+                    if (it.isLoading) showLoading() else hideLoading()
+                    rv_users.visibility = if (it.isLoading) View.GONE else View.VISIBLE
                 }
                 is Failed -> {
                     if (it.error != null) Toast.makeText(requireContext(),it.error!!, Toast.LENGTH_LONG).show()
@@ -67,6 +70,18 @@ class HomeFragment : Fragment() {
             }
 
         })
+
+    }
+
+    fun showLoading() {
+        iv_rotated.visibility = View.VISIBLE
+        val animation = AnimationUtils.loadAnimation(requireContext(), R.anim.rotated_view)
+        iv_rotated.startAnimation(animation)
+    }
+
+    fun hideLoading() {
+        iv_rotated.visibility = View.GONE
+        iv_rotated.clearAnimation()
 
     }
 

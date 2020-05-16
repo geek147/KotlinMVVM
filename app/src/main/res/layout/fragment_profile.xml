@@ -7,50 +7,156 @@
     android:orientation="vertical"
     tools:context=".ui.profile.ProfileFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:text="@string/title_profile"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="20dp"
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
 
-        android:layout_height="wrap_content"/>
+        >
 
-   <ImageView
-       android:layout_width="wrap_content"
-       android:src="@drawable/ilham"
-       android:layout_margin="20dp"
-       android:layout_gravity="center_horizontal"
-       android:layout_height="wrap_content"/>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="60dp"
+            app:cardElevation="8dp"
+            app:cardMaxElevation="8dp"
+            app:cardCornerRadius="16dp"
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:text="@string/name"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="20dp"
+            >
 
-        android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:text="@string/ilham"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="10dp"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="@string/title_profile"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="20dp"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"/>
 
-        android:layout_height="wrap_content"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:src="@drawable/ilham"
+                    android:layout_margin="20dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:text="@string/email"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="10dp"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="@string/name"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_height="wrap_content"/>
 
-        android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="@string/ilham"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="5dp"
+                    android:textStyle="bold"
+                    android:textSize="24sp"
+                    android:layout_height="wrap_content"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:text="@string/ilham_email"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="10dp"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="@string/email"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:textSize="20sp"
 
-        android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="@string/ilham_email"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginTop="5dp"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="@string/occupation"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:textSize="20sp"
+
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="@string/freelance_android_developer"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginTop="5dp"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="@string/skills"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:textSize="20sp"
+
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="@string/java_kotlin_python_android_development"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_horizontal"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="@string/work_experiences"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:textSize="20sp"
+
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="1. Beetlebox - Android Developer - August 2011 to Jan 2012
+\n2. Mobafone - Android Developer - Feb 2012 to June 2012\n3. Samsung Research Institute Indonesja - Android Developer - July 2012 to June 2015
+\n4. Ahlijasa - Android Developer - Oct 2015 to Feb 2017\n5. Freelacer - Android Developer - Feb 2018 to now "
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:gravity="fill_horizontal"
+
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.core.widget.NestedScrollView>
+
 </LinearLayout>

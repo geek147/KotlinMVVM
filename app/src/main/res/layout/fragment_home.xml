@@ -22,27 +22,16 @@
             android:layout_marginBottom="60dp"
             tools:listitem="@layout/adapter_home"/>
 
-
-
-        <RelativeLayout
-            android:id="@+id/rl_no_connection"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+        <ImageView
+            android:layout_width="60dp"
+            android:src="@drawable/ic_loading"
+            android:id="@+id/iv_rotated"
             android:visibility="gone"
-            android:background="@android:color/white">
-
-            <TextView
-                android:id="@+id/tv_no_connection"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:text="No Internet Connection"
-                android:textColor="@android:color/black"
-                android:textSize="20sp" />
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_height="60dp"/>
 
 
-        </RelativeLayout>
 
 
 

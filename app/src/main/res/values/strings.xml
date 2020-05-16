@@ -2,9 +2,14 @@
     <string name="app_name">BukuWarungTest</string>
     <string name="title_home">Home</string>
     <string name="title_profile">Profile</string>
-    <string name="name">name</string>
+    <string name="name">Full Name</string>
     <string name="ilham">Ilham Aulia Malik</string>
-    <string name="email">email</string>
+    <string name="email">Email</string>
     <string name="ilham_email">ilhamaulia.malik@gmail.com</string>
     <string name="user_profile">User Profile</string>
+    <string name="occupation">Latest Job</string>
+    <string name="skills">Skills</string>
+    <string name="java_kotlin_python_android_development">Java, Kotlin, Python, Android Development</string>
+    <string name="freelance_android_developer">Freelance Android Developer</string>
+    <string name="work_experiences">Work Experiences</string>
 </resources>
