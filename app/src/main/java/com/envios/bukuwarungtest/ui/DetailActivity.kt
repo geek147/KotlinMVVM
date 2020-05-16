@@ -9,8 +9,6 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.envios.bukuwarungtest.R
 import com.envios.bukuwarungtest.data.local.model.User
-import com.envios.bukuwarungtest.data.remote.model.Data
-import com.envios.bukuwarungtest.utils.BindingConverters
 import kotlinx.android.synthetic.main.activity_detail.*
 
 class DetailActivity : AppCompatActivity() {
@@ -37,14 +35,15 @@ class DetailActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
-
-        else -> {
-            // If we got here, the user's action was not recognized.
-            // Invoke the superclass to handle it.
-            super.onOptionsItemSelected(item)
+        when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressed()
+                return true
+            }
         }
+        return super.onOptionsItemSelected(item)
     }
 }
 
