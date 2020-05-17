@@ -2,7 +2,7 @@ package com.envios.bukuwarungtest.ui.home
 
 import android.content.ContentValues.TAG
 import android.util.Log
-import com.envios.bukuwarungtest.data.base.BaseViewModel
+import com.envios.bukuwarungtest.base.BaseViewModel
 import com.envios.bukuwarungtest.data.local.model.User
 import com.envios.bukuwarungtest.data.repository.BukuWarungRepository
 import com.envios.bukuwarungtest.utils.Failed

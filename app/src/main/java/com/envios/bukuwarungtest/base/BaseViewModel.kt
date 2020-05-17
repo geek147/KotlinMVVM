@@ -1,4 +1,4 @@
-package com.envios.bukuwarungtest.data.base
+package com.envios.bukuwarungtest.base
 
 import androidx.annotation.CallSuper
 import androidx.lifecycle.LiveData
