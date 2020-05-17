@@ -69,8 +69,8 @@ class HomeFragment : Fragment() {
                     swipe_refresh.isRefreshing = false
                 }
                 is Loading -> {
-                    if (it.isLoading) showLoading() else hideLoading()
-                    rv_users.visibility = if (it.isLoading) View.GONE else View.VISIBLE
+//                    if (it.isLoading) showLoading() else hideLoading()
+//                    rv_users.visibility = if (it.isLoading) View.GONE else View.VISIBLE
                 }
                 is Failed -> {
                     if (it.error != null) Toast.makeText(requireContext(),it.error!!, Toast.LENGTH_LONG).show()
