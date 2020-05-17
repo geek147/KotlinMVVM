@@ -50,6 +50,13 @@ class HomeFragment : Fragment() {
 
         observeLiveData()
 
+
+
+        swipe_refresh.setOnRefreshListener {
+
+            viewModel.getUsers()
+        }
+
     }
 
     private fun observeLiveData(){
@@ -59,6 +66,7 @@ class HomeFragment : Fragment() {
                 is HomeViewModel.UsersLoaded -> {
                     adapter.setData(it.userList)
                     adapter.notifyDataSetChanged()
+                    swipe_refresh.isRefreshing = false
                 }
                 is Loading -> {
                     if (it.isLoading) showLoading() else hideLoading()
@@ -66,6 +74,8 @@ class HomeFragment : Fragment() {
                 }
                 is Failed -> {
                     if (it.error != null) Toast.makeText(requireContext(),it.error!!, Toast.LENGTH_LONG).show()
+                    swipe_refresh.isRefreshing = false
+
                 }
             }
 
